@@ -35,10 +35,10 @@
     ]
   },
   "devDependencies": {
+    "@gravity-ui/eslint-config": "^1.0.2",
+    "@gravity-ui/prettier-config": "^1.0.1",
+    "@gravity-ui/tsconfig": "^1.0.0",
     "@types/node": "^18.11.9",
-    "@yandex-cloud/eslint-config": "github:yandex-cloud/eslint-config",
-    "@yandex-cloud/prettier-config": "^1.0.0",
-    "@yandex-cloud/tsconfig": "^1.0.0",
     "eslint": "^8.28.0",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",
