@@ -1,0 +1,48 @@
+{
+  "name": "belousov-utils",
+  "version": "1.0.0",
+  "description": "",
+  "author": "jhoncool",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
+  "bin": {
+    "belousov-utils": "./bin/belousov-utils.js"
+  },
+  "scripts": {
+    "build": "npm run build:clean && npm run build:compile",
+    "build:compile": "tsc -p tsconfig.json",
+    "build:clean": "rimraf build",
+    "lint:eslint": "eslint \"src/**/*\" --quiet",
+    "lint:prettier": "prettier --check --loglevel=error 'src/**/*.ts'",
+    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run lint && npm run build",
+    "prepare": "husky install"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhoncool/belousov-utils.git"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --quiet",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@yandex-cloud/eslint-config": "github:yandex-cloud/eslint-config",
+    "@yandex-cloud/prettier-config": "^1.0.0",
+    "@yandex-cloud/tsconfig": "^1.0.0",
+    "eslint": "^8.28.0",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.8.0",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.9.3"
+  }
+}
