@@ -14,7 +14,7 @@
     "build:clean": "rimraf build",
     "lint:eslint": "eslint \"src/**/*\" --quiet",
     "lint:prettier": "prettier --check --loglevel=error 'src/**/*.ts'",
-    "lint": "npm run lint:prettier && npm run lint:eslint",
+    "lint": "npm run lint:prettier && npm run lint:eslint && npm run typecheck",
     "typecheck": "tsc --noEmit",
     "prepublishOnly": "npm run lint && npm run build",
     "prepare": "husky install"
