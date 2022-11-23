@@ -1,0 +1,8 @@
+{
+  "extends": "@yandex-cloud/tsconfig/tsconfig",
+  "compilerOptions": {
+    "outDir": "build",
+    "declaration": true
+  },
+  "include": ["src"]
+}
