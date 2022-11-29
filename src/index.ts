@@ -46,7 +46,10 @@ export default function run() {
             if (columns.some(Boolean)) {
                 const filename = columns[colname - 1] || `rand_${Math.random()}`;
                 const data = header.join('\r\n') + '\r\n' + line + '\r\n';
-                fs.appendFileSync(path.join(output, filename + '.csv'), data, encoding);
+                fs.appendFileSync(path.join(output, filename + '.csv'), data, {
+                    encoding,
+                    flag: 'w',
+                });
             }
         }
     });
